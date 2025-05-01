@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react';
+const clientId = import.meta.env.VITE_CLIENT_ID;
+const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
+const redirectUri = import.meta.env.VITE_REDIRECT_URI;
 
 export default function InstagramOAuthApp() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -8,9 +11,7 @@ export default function InstagramOAuthApp() {
   const [errorMessage, setErrorMessage] = useState('');
 
   // Instagram OAuth configuration
-  const clientId = env.CLIENT_ID;
-  const clientSecret = env.CLIENT_SECRET;
-  const redirectUri = env.REDIRECT_URI;
+
   const scopes = [
     'instagram_business_basic',
     'instagram_business_manage_messages',
